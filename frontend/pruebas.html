@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pruebas físicas — Pulso</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="appbar">
+    <div class="container appbar__inner">
+      <a class="brand" href="index.html" aria-label="Pulso, inicio">
+        <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M0 12 h10 l3 -8 l5 16 l4 -12 l3 4 h12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><span class="lead">Pul</span>so</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menú</button>
+      <nav class="nav" id="nav">
+        <a href="index.html">Inicio</a>
+        <a href="registro.html">Registro diario</a>
+        <a href="panel.html">Panel del CT</a>
+        <a href="pruebas.html" aria-current="page">Pruebas físicas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-head">
+      <div class="container">
+        <p class="ey">Cuerpo técnico</p>
+        <h1>Pruebas físicas semanales</h1>
+        <p>Carga los resultados de la batería de pruebas de la semana. Alimentan el informe de cada jugador.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="form" style="max-width: 760px; margin-bottom: 32px;">
+        <div class="field">
+          <label for="pjugador">Jugador</label>
+          <select id="pjugador" class="input">
+            <option>Juan David Rincón · Delantero</option>
+            <option>Carlos Andrés Mora · Volante</option>
+            <option>Santiago Ríos · Defensa central</option>
+            <option>Miguel Ángel Peña · Lateral</option>
+            <option>Julián Ospina · Arquero</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sprint">Sprint 30 m</label>
+          <div class="input-affix"><input id="sprint" class="input" type="number" step="0.01" placeholder="4.12" /><span class="unit">s</span></div>
+        </div>
+        <div class="field">
+          <label for="salto">Salto vertical (CMJ)</label>
+          <div class="input-affix"><input id="salto" class="input" type="number" step="0.1" placeholder="48.5" /><span class="unit">cm</span></div>
+        </div>
+        <div class="field">
+          <label for="yoyo">Resistencia (Yo-Yo IR1)</label>
+          <div class="input-affix"><input id="yoyo" class="input" type="number" step="10" placeholder="1840" /><span class="unit">m</span></div>
+        </div>
+        <button class="btn btn--primary btn--block" id="cargarPrueba" type="button">Guardar pruebas de la semana</button>
+      </div>
+
+      <h2 style="font-size:20px; margin-bottom:16px;">Registros de esta semana</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Jugador</th>
+              <th class="num">Sprint 30 m (s)</th>
+              <th class="num">Salto CMJ (cm)</th>
+              <th class="num">Yo-Yo IR1 (m)</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPruebas">
+            <tr><td>Juan David Rincón</td><td class="num">4.12</td><td class="num">48.5</td><td class="num">1840</td></tr>
+            <tr><td>Carlos Andrés Mora</td><td class="num">4.28</td><td class="num">44.0</td><td class="num">2120</td></tr>
+            <tr><td>Santiago Ríos</td><td class="num">4.41</td><td class="num">41.2</td><td class="num">1760</td></tr>
+            <tr><td>Miguel Ángel Peña</td><td class="num">4.19</td><td class="num">46.8</td><td class="num">1980</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container foot__inner">
+      <span>Pulso · Microproyecto de Arquitectura de Software</span>
+      <span>Daniel Eduardo Viafara Guacaneme · <span id="year"></span></span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status">
+    <span class="tick" aria-hidden="true">✓</span><span id="toastMsg">Pruebas guardadas</span>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/pruebas.js"></script>
+</body>
+</html>
