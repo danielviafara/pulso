@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pulso — Monitoreo físico del plantel</title>
-  <meta name="description" content="Pulso digitaliza el registro diario de peso y percepción de esfuerzo (RPE) y las pruebas físicas semanales de un plantel de fútbol." />
+  <meta name="description" content="Pulso: registro diario de peso y RPE y pruebas físicas semanales de un plantel de fútbol. Prototipo Fase 2 con arquitectura MVC." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,79 +14,22 @@
 <body>
   <header class="appbar">
     <div class="container appbar__inner">
-      <a class="brand" href="index.html" aria-label="Pulso, inicio">
+      <a class="brand" href="#/" aria-label="Pulso, inicio">
         <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M0 12 h10 l3 -8 l5 16 l4 -12 l3 4 h12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span><span class="lead">Pul</span>so</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menú</button>
       <nav class="nav" id="nav">
-        <a href="index.html" aria-current="page">Inicio</a>
-        <a href="registro.html">Registro diario</a>
-        <a href="panel.html">Panel del CT</a>
-        <a href="pruebas.html">Pruebas físicas</a>
+        <a href="#/">Inicio</a>
+        <a href="#/registro">Registro diario</a>
+        <a href="#/panel">Panel del CT</a>
+        <a href="#/pruebas">Pruebas físicas</a>
+        <a href="#/arquitectura">Arquitectura</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero container">
-      <p class="hero__kicker">Monitoreo de condición física · Fútbol</p>
-      <h1>El pulso de tu plantel, día a día.</h1>
-      <p class="hero__tag">Registra el peso y la percepción de esfuerzo de cada jugador todos los días, suma las pruebas físicas semanales y consulta la evolución en un solo lugar.</p>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="registro.html">Registrar mi día</a>
-        <a class="btn btn--ghost" href="panel.html">Ver panel del cuerpo técnico</a>
-      </div>
-
-      <svg class="ecg" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
-        <path class="base" d="M0 75 H1200" />
-        <path class="__draw ecg__draw" d="M0 75 H150 l20 0 l14 -46 l22 92 l18 -120 l16 154 l14 -80 l12 20 H520 l18 0 l12 -34 l20 68 l16 -92 l14 118 l12 -60 l10 0 H900 l16 0 l12 -40 l20 80 l16 -108 l14 138 l12 -70 l10 0 H1200" />
-      </svg>
-    </section>
-
-    <!-- ROLES -->
-    <section class="section container">
-      <div class="roles">
-        <a class="role" href="registro.html">
-          <span class="role__eyebrow">Para el jugador</span>
-          <h3>Registro diario</h3>
-          <p>Después de pesarte, anota tu peso y qué tan duro sentiste el día. Toma menos de un minuto.</p>
-          <span class="role__go">Entrar al registro →</span>
-        </a>
-        <a class="role" href="panel.html">
-          <span class="role__eyebrow">Para el cuerpo técnico</span>
-          <h3>Panel de seguimiento</h3>
-          <p>Consulta el informe semanal de cada jugador, revisa tendencias y deja anotaciones puntuales.</p>
-          <span class="role__go">Abrir el panel →</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- QUÉ HACE -->
-    <section class="section container feature-list">
-      <ul>
-        <li>
-          <span class="ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
-          </span>
-          <div><h4>Carga percibida (RPE)</h4><p>Escala de esfuerzo de 1 a 10 para saber cómo vivió cada jugador la sesión.</p></div>
-        </li>
-        <li>
-          <span class="ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 1 5 5c0 3-5 9-5 9s-5-6-5-9a5 5 0 0 1 5-5z"/><circle cx="12" cy="8" r="1.5"/></svg>
-          </span>
-          <div><h4>Peso diario</h4><p>Un histórico continuo del peso, no una hoja suelta que se pierde.</p></div>
-        </li>
-        <li>
-          <span class="ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5m4 14V9m4 10V3m4 16v-7m4 7V7"/></svg>
-          </span>
-          <div><h4>Informe semanal</h4><p>Peso, carga y pruebas físicas cruzados por jugador, con anotaciones del CT.</p></div>
-        </li>
-      </ul>
-    </section>
-  </main>
+  <main id="app"><!-- el router monta la vista activa aquí --></main>
 
   <footer class="foot">
     <div class="container foot__inner">
@@ -95,6 +38,22 @@
     </div>
   </footer>
 
+  <div class="toast" id="toast" role="status">
+    <span class="tick" aria-hidden="true">✓</span><span id="toastMsg">Listo</span>
+  </div>
+
+  <!-- Carga en orden: datos → modelos → vistas → controladores → router → app -->
+  <script src="js/data/store.js"></script>
+  <script src="js/models/models.js"></script>
+  <script src="js/views/InicioView.js"></script>
+  <script src="js/views/RegistroView.js"></script>
+  <script src="js/views/PanelView.js"></script>
+  <script src="js/views/PruebasView.js"></script>
+  <script src="js/views/ArquitecturaView.js"></script>
+  <script src="js/controllers/RegistroController.js"></script>
+  <script src="js/controllers/PanelController.js"></script>
+  <script src="js/controllers/PruebasController.js"></script>
+  <script src="js/router.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
