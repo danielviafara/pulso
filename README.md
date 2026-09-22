@@ -79,4 +79,5 @@ siguientes entregas.
 
 ## Autor
 
-Daniel Eduardo Viafara Guacaneme — Ingeniería de Software, quinto semestre.
+Daniel Viafara — Ingeniería de Software, quinto semestre.
+Juan Quijano - Ingenieria de Software, quinto semestre.
